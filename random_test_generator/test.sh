@@ -1,6 +1,6 @@
 #!/bin/bash
 
-g++ -O2 -std=c++17 roz.cpp -o roz
+g++ -O2 -std=c++17 solve.cpp -o solve
 if [ $? -ne 0 ]; then
     echo "Błąd kompilacji"
     exit 1
@@ -18,7 +18,7 @@ for i in $(seq 1 6); do
     fi
 
     start=$(date +%s.%N)
-    timeout 3s ./roz < "$infile" > "$tmpout"
+    timeout 3s ./solve < "$infile" > "$tmpout"
     status=$?
     end=$(date +%s.%N)
 
