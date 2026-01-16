@@ -11,12 +11,12 @@ int par[N];
 
 void dfs(int s, int p)
 {
-  par[s] = p;
-  dis[s]= dis[p] + 1;
-  for(auto u : g[s]) if(u!=p)
-  {
-    dfs(u,s);
-  }
+    par[s] = p;
+    dis[s]= dis[p] + 1;
+    for(auto u : g[s]) if(u!=p)
+    {
+        dfs(u,s);
+    }
 }
 
 int solve(int a, int b)
@@ -41,24 +41,24 @@ int solve(int a, int b)
 
 int main()
 {
-  ios::sync_with_stdio(0);
-  cin.tie(0);
-  int n;
-  cin>>n;
-  for(int i = 1; i < n; i ++)
-  {
-    int a,b;
-    cin>>a>>b;
-    g[a].push_back(b);
-    g[b].push_back(a);
-  }
-  dfs(1,0);
-  int q;
-  cin>>q;
-  while(q--)
-  {
-    int x,y;
-    cin>>x>>y;
-    cout<<solve(x,y)<<'\n';
-  }
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int n;
+    cin>>n;
+    for(int i = 1; i < n; i ++)
+    {
+        int a,b;
+        cin>>a>>b;
+        g[a].push_back(b);
+        g[b].push_back(a);
+    }
+    dfs(1,0);
+    int q;
+    cin>>q;
+    while(q--)
+    {
+        int x,y;
+        cin>>x>>y;
+        cout<<solve(x,y)<<'\n';
+    }
 }
