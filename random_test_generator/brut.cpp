@@ -59,6 +59,8 @@ int main()
     {
         int x,y;
         cin>>x>>y;
-        cout<<solve(x,y)<<'\n';
+        cout<<solve(x,y);
+        if(q)
+            cout<<"\n";
     }
 }
