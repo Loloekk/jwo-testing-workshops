@@ -1,0 +1,9 @@
+g++ [nazwa pliku źródłowego] -o [nazwa pliku wykonywalnego]
+g++ buggy.cpp -o buggy
+
+-Wall
+-Wextra
+-Wshadow
+-D_GLIBCXX_DEBUG
+-fsanitize=address
+-fsanitize=undefined
