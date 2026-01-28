@@ -1,7 +1,7 @@
 #!/bin/bash
 
 g++ solve.cpp -o solve
-#TODO
+g++ checker.cpp -o checker #Już zedytowana linia (kompilujemy checker.cpp) 
 
 
 for ((i=1; i<=3; i++))
@@ -11,7 +11,7 @@ do
     ./solve < in/roz$i.in > out.out
 
     # porównanie z ignorowaniem białych znaków
-    if diff -w out.out out/roz$i.out > /dev/null; then # TODO
+    if ./checker in/roz$i.in out/roz$i.out out.out > /dev/null; then # Już zedytowana linia (sprawdzamy poprawność za pomocą checker a nie diff)
         echo "$i [OK]"
     else
         echo "$i [FAIL]"
